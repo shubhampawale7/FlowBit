@@ -122,7 +122,7 @@ const AboutUsPage = () => {
           >
             <div className="w-full h-full flex items-center justify-center">
               <p className="font-serif text-gold/30 text-3xl">
-                Abstract Financial Art
+                Abstract Financial Art!
               </p>
             </div>
           </motion.div>

@@ -1,0 +1,37 @@
+/* client/src/styles/index.css */
+
+/* 1. Import external fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+/* 2. Inject Tailwind's base, components, and utilities styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Add custom styles to Tailwind's 'base' layer */
+@layer base {
+  body {
+    /*
+      CORRECTED: Added dark:text-paper to ensure text is visible in dark mode.
+      - Light mode (default): off-white background (bg-paper) with dark text (text-ink).
+      - Dark mode: dark background (dark:bg-ink) with off-white text (dark:text-paper).
+    */
+    @apply bg-paper text-ink dark:bg-ink dark:text-paper;
+    @apply transition-colors duration-300;
+  }
+
+  /* Adding a subtle scrollbar style to match the theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbsar-thumb {
+    @apply bg-paper-secondary dark:bg-ink-secondary;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold/50;
+  }
+}
